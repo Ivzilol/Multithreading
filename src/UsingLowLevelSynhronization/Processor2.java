@@ -5,13 +5,13 @@ import java.util.Random;
 
 public class Processor2 {
 
-    private LinkedList<Integer> list = new LinkedList<>();
-    private final int limit = 10;
+    private final LinkedList<Integer> list = new LinkedList<>();
     private final Object lock = new Object();
     public void produce() throws InterruptedException {
         int value = 0;
         while (true) {
             synchronized (lock) {
+                int limit = 10;
                 while (list.size() == limit) {
                     lock.wait();
                 }

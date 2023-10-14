@@ -11,10 +11,10 @@ public class App {
             public void run() {
                 Random random = new Random();
                 for (int i = 0; i < 1E8; i++) {
-//                    if (Thread.currentThread().isInterrupted()) {
-//                        System.out.println("Interrupted");
-//                        break;
-//                    }
+                    if (Thread.currentThread().isInterrupted()) {
+                        System.out.println("Interrupted");
+                        break;
+                    }
                     try {
                         Thread.sleep(1);
                     } catch (InterruptedException e) {
